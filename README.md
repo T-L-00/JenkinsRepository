@@ -1,2 +1,1 @@
-# JenkinsRepository 
-println("Hello World")
+currentBuild.displayName = "New Build"
