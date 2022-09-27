@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage("Stage 1"){
+            steps {
+               echo 'Clone the repo'
+               sh 'rm -fr T-L-00'
+               sh 'git@github.com:T-L-00/JenkinsRepository.git'
+                }
+            }
+        }
+    }
