@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Cloning git') { 
             steps {
-                git branch: 'main', url: 'https://github.com/T-L-00/JenkinsRepository.git'
+                git branch: 'branch1', url: 'https://github.com/T-L-00/JenkinsRepository.git'
             }
         }
         stage('Maven install') {
