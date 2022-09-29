@@ -1,13 +1,13 @@
 pipeline {
     agent any
     stages {
-        //stage("Stage 1"){
-            //steps {
-              //echo 'Clone the repo'
-              //sh 'rm -fr JenkinsRepository'
-              //sh 'git clone https://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@github.com/T-L-00/JenkinsRepository.git'
-               //} 
-           //}
+        /* stage("Stage 1"){
+            steps {
+              echo 'Clone the repo'
+              sh 'rm -fr JenkinsRepository'
+              sh 'git clone https://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@github.com/T-L-00/JenkinsRepository.git'
+               } 
+           } */
             stage("Stage 2") {
                 steps {
                     echo 'Connect to remote host and pull the latest version'
