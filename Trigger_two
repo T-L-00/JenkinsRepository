@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        registry = "azureuser/jenkins-docker-maven" 
-        registryCredential = 'dockerhub_id' 
+        registry = "Tamara_user/JenkinsRepository" 
+        registryCredential = '	b66a9ddc-0220-4e3c-9d15-639a91a29cb3' 
         dockerImage = ''
     }
     stages {
