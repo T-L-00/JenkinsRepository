@@ -1,37 +1,23 @@
 pipeline {
     agent any
     environment {
-        registry = "Tamara_user/JenkinsRepository" 
-        registryCredential = '	b66a9ddc-0220-4e3c-9d15-639a91a29cb3' 
+        registry = "Tamara_user/https://github.com/T-L-00/JenkinsRepository.git" 
+        registryCredential = 'dckr_pat_1-a4p73VS-cGzJyDignU6uQNz6E' 
         dockerImage = ''
     }
     stages {
-        stage('Cloning git') { 
+        stage("Stage 1"){
             steps {
-                git branch: 'main', url: 'https://github.com/jbojovicct360/jenkins-task-repo.git'
+               echo 'Clone the repo'
+               sh 'rm -fr JenkinsRepository'
+               sh 'git clone https://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@github.com/T-L-00/JenkinsRepository.git'
+                }
             }
-        }
         stage('Maven install') {
             steps {
                 sh 'mvn --v'
                 sh 'mvn clean install'
             }
-        }
-        stage('Building image') { 
-            steps { 
-                script { 
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
-                }
-            } 
-        }
-        stage('Creating Docker image') {
-            steps { 
-                script { 
-                    docker.withRegistry( '', registryCredential ) { 
-                        dockerImage.push() 
-                    }
-                } 
-            }
-        }
-    }
-}
+        }  
+     } 
+ }
